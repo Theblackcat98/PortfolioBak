@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import { Button, Link } from '@heroui/react';
 import { GithubIcon, LinkedinIcon, TwitterIcon, DribbbleIcon } from './Icons'; // Assuming you'll create an Icons.tsx for SVGs

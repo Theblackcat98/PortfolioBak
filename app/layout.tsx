@@ -4,10 +4,12 @@ import { Providers } from './providers';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark" suppressHydrationWarning>
       <body>
         <Providers>
-          {children}
+          <main className="text-foreground bg-background flex-grow">
+            {children}
+          </main>
         </Providers>
       </body>
     </html>

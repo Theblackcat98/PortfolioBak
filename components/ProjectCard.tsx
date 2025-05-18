@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import {Card, CardHeader, CardBody, CardFooter, Image, Button, Link, Chip} from "@heroui/react";
 import { ExternalLinkIcon, GithubIconMini } from './IconsMini'; // Assuming smaller/specific icons for cards

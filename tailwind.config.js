@@ -36,10 +36,10 @@ module.exports = {
         light: {
           // layout: { ... },
           colors: {
-            // primary: '#ff6f59ff', // Your --primary for light theme
-            // secondary: '#f2d2a7ff', // Your --secondary for light theme
-            // background: '#ffffff', // Example light background
-            // foreground: '#2e2e3aff', // Example light text
+            primary: '#ff6f59ff', 
+            secondary: '#f2d2a7ff',
+            background: '#f7f7f7ff', // Your previous --light-color
+            foreground: '#2e2e3aff', // Your previous --dark-color (as text color for light theme)
           },
         },
         dark: {
@@ -47,8 +47,8 @@ module.exports = {
           colors: {
             primary: '#ff6f59ff',
             secondary: '#f2d2a7ff',
-            // background: '#2e2e3aff', // Example dark background (your --dark)
-            // foreground: '#ffffff', // Example dark text (your --light)
+            background: '#2e2e3aff', // Your previous --dark-color
+            foreground: '#f7f7f7ff', // Your previous --light-color (as text color for dark theme)
           },
         },
       },
