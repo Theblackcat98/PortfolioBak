@@ -6,6 +6,50 @@ import { Input } from "@heroui/react";
 export default function DashboardPage() {
   const [searchTerm, setSearchTerm] = useState("");
 
+  const apps = [
+    { 
+      title: "Color Palette Generator", 
+      description: "Generate and save beautiful color combinations",
+      icon: "fas fa-palette",
+      linkUrl: "/colorpicker"
+    },
+    { 
+      title: "Portfolio Website", 
+      description: "My personal portfolio showcasing my projects and skills",
+      icon: "fas fa-briefcase",
+      linkUrl: "/"
+    },
+    { 
+      title: "Weather App", 
+      description: "Check the current weather and forecast for any location",
+      icon: "fas fa-cloud-sun",
+      linkUrl: "#"
+    },
+    { 
+      title: "Task Manager", 
+      description: "Simple task management application with drag and drop support",
+      icon: "fas fa-tasks",
+      linkUrl: "#"
+    },
+    { 
+      title: "Notes App", 
+      description: "Create, edit and manage your notes with markdown support",
+      icon: "fas fa-sticky-note",
+      linkUrl: "#"
+    },
+    { 
+      title: "Calculator", 
+      description: "Basic and scientific calculator with history feature",
+      icon: "fas fa-calculator",
+      linkUrl: "#"
+    }
+  ];
+
+  const filteredApps = apps.filter(app => 
+    app.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+    app.description.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <main className="flex min-h-screen flex-col p-6 bg-background">
       <div className="bg-animation">
@@ -42,43 +86,15 @@ export default function DashboardPage() {
 
       <div className="max-w-6xl mx-auto w-full">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="app-grid">
-          {/* Example Application Cards - These would be dynamically generated */}
-          <AppCard 
-            title="Portfolio Website" 
-            description="My personal portfolio showcasing my projects and skills"
-            icon="fas fa-briefcase"
-            linkUrl="/"
-          />
-          <AppCard 
-            title="Weather App" 
-            description="Check the current weather and forecast for any location"
-            icon="fas fa-cloud-sun"
-            linkUrl="#"
-          />
-          <AppCard 
-            title="Task Manager" 
-            description="Simple task management application with drag and drop support"
-            icon="fas fa-tasks"
-            linkUrl="#"
-          />
-          <AppCard 
-            title="Notes App" 
-            description="Create, edit and manage your notes with markdown support"
-            icon="fas fa-sticky-note"
-            linkUrl="#"
-          />
-          <AppCard 
-            title="Calculator" 
-            description="Basic and scientific calculator with history feature"
-            icon="fas fa-calculator"
-            linkUrl="#"
-          />
-          <AppCard 
-            title="Music Player" 
-            description="Stream and play your favorite music with playlists"
-            icon="fas fa-music"
-            linkUrl="#"
-          />
+          {filteredApps.map((app, index) => (
+            <AppCard 
+              key={index}
+              title={app.title} 
+              description={app.description}
+              icon={app.icon}
+              linkUrl={app.linkUrl}
+            />
+          ))}
         </div>
       </div>
     </main>
